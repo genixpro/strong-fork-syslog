@@ -280,39 +280,40 @@ ReturnType ReturnableHandleScope::Return(v8::Local<v8::Value> value) {
 }
 
 #else
-
+/*
 void CpuProfiler::StartCpuProfiling(v8::Isolate* isolate,
                                     v8::Local<v8::String> title) {
-  const bool record_samples = true;
-  if (title.IsEmpty()) title = v8::String::Empty(isolate);
-  return isolate->GetCpuProfiler()->StartCpuProfiling(title, record_samples);
+  //const bool record_samples = true;
+  //if (title.IsEmpty()) title = v8::String::Empty(isolate);
+  //return isolate->GetCpuProfiler()->StartCpuProfiling(title, record_samples);
 }
 
 const v8::CpuProfile* CpuProfiler::StopCpuProfiling(
-    v8::Isolate* isolate, v8::Local<v8::String> title) {
-  if (title.IsEmpty()) title = v8::String::Empty(isolate);
-  return isolate->GetCpuProfiler()->StopCpuProfiling(title);
+//    v8::Isolate* isolate, v8::Local<v8::String> title) {
+//  if (title.IsEmpty()) title = v8::String::Empty(isolate);
+//  return isolate->GetCpuProfiler()->StopCpuProfiling(title);
 }
 
 void Isolate::GetHeapStatistics(v8::Isolate* isolate,
                                 v8::HeapStatistics* stats) {
   return isolate->GetHeapStatistics(stats);
 }
-
+*/
 v8::Local<v8::Value> Isolate::ThrowException(v8::Isolate* isolate,
                                              v8::Local<v8::Value> exception) {
   return isolate->ThrowException(exception);
 }
 
+/*
 const v8::HeapSnapshot* HeapProfiler::TakeHeapSnapshot(
     v8::Isolate* isolate, v8::Local<v8::String> title) {
   if (title.IsEmpty()) title = v8::String::Empty(isolate);
   return isolate->GetHeapProfiler()->TakeHeapSnapshot(title);
 }
-
 void HeapProfiler::DeleteAllHeapSnapshots(v8::Isolate* isolate) {
   return isolate->GetHeapProfiler()->DeleteAllHeapSnapshots();
 }
+*/
 
 v8::Local<v8::String> String::NewFromUtf8(v8::Isolate* isolate,
                                           const char* data, NewStringType type,
